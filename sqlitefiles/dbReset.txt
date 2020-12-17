@@ -1,0 +1,127 @@
+DROP TABLE IF EXISTS User;
+DROP TABLE IF EXISTS Zoo;
+DROP TABLE IF EXISTS Zookeeper;
+DROP TABLE IF EXISTS Animal;
+DROP TABLE IF EXISTS Vote;
+DROP TABLE IF EXISTS Contest;
+DROP TABLE IF EXISTS Sponsor;
+DROP TABLE IF EXISTS Support;
+DROP TABLE IF EXISTS Entry;
+DROP TABLE IF EXISTS Post;
+DROP TABLE IF EXISTS UserFanAnimal;
+DROP TABLE IF EXISTS UserFanZoo;
+
+
+CREATE TABLE User (
+  ID INTEGER PRIMARY KEY,
+  name varchar(30) DEFAULT NULL,
+  image_url varchar(200) DEFAULT NULL,
+  profile varchar(300) DEFAULT NULL
+);
+
+CREATE TABLE Zoo (
+  ID INTEGER PRIMARY KEY,
+  name varchar(30) DEFAULT NULL,
+  image_url varchar(200) DEFAULT NULL,
+  description varchar(200) DEFAULT NULL,
+  address varchar(100) DEFAULT NULL,
+  latitude REAL DEFAULT NULL,
+  longitude REAL DEFAULT NULL
+);
+
+CREATE TABLE Zookeeper (
+  ID INTEGER PRIMARY KEY,
+  name varchar(30) DEFAULT NULL,
+  password varchar(50) DEFAULT NULL,
+  image_url varchar(200) DEFAULT NULL,
+  profile varchar(300) DEFAULT NULL,
+  zooID INT NOT NULL,
+  FOREIGN KEY (zooID) REFERENCES Zoo(ID)
+);
+
+CREATE TABLE Animal (
+  ID INTEGER PRIMARY KEY,
+  name varchar(30) DEFAULT NULL,
+  commonName varchar(30) DEFAULT NULL,
+  species varchar(30) DEFAULT NULL,
+  sex varchar(30) DEFAULT NULL,
+  birthday TEXT DEFAULT NULL,
+  image_url varchar(200) DEFAULT NULL,
+  description varchar(300) DEFAULT NULL,
+  zooID INT NOT NULL,
+  FOREIGN KEY (zooID) REFERENCES Zoo(ID)
+);
+
+CREATE TABLE Vote (
+  ID INTEGER PRIMARY KEY,
+  entryID INT NOT NULL,
+  userID INT NOT NULL,
+  count INT NOT NULL,
+  lastVoted TEXT NOT NULL,
+  FOREIGN KEY (entryID) REFERENCES Entry(ID),
+  FOREIGN KEY (userID) REFERENCES User(ID)
+);
+
+CREATE TABLE Contest (
+  ID INTEGER PRIMARY KEY,
+  name varchar(30) DEFAULT NULL,
+  start TEXT DEFAULT NULL,
+  end TEXT DEFAULT NULL,
+  catch_copy varchar(200) DEFAULT NULL,
+  image_url varchar(200) DEFAULT NULL,
+  description varchar(300) DEFAULT NULL
+);
+
+CREATE TABLE Sponsor (
+  ID INTEGER PRIMARY KEY,
+  name varchar(30) DEFAULT NULL,
+  image_url varchar(200) DEFAULT NULL,
+  website_url varchar(200) DEFAULT NULL
+ );
+
+CREATE TABLE Support (
+  ID INTEGER PRIMARY KEY,
+  sponsorID INT NOT NULL,
+  contestID INT NOT NULL,
+  FOREIGN KEY (sponsorID) REFERENCES Sponsor(ID),
+  FOREIGN KEY (contestID) REFERENCES Contest(ID)
+);
+
+CREATE TABLE Entry (
+  ID INTEGER PRIMARY KEY,
+  placement INT DEFAULT NULL,
+  created TEXT NOT NULL,
+  contestID INT NOT NULL,
+  animalID INT NOT NULL,
+  award varchar(100) DEFAULT NULL,
+  FOREIGN KEY (contestID) REFERENCES Contest(ID),
+  FOREIGN KEY (animalID) REFERENCES Animal(ID)
+);
+
+CREATE TABLE Post (
+  ID INTEGER PRIMARY KEY,
+  image_url varchar(200) NOT NULL,
+  created TEXT NOT NULL,
+  description varchar(200) DEFAULT NULL,
+  animalID INT NOT NULL,
+  zookeeperID INT NOT NULL,
+  FOREIGN KEY (animalID) REFERENCES Animal(ID),
+  FOREIGN KEY (zookeeperID) REFERENCES Zookeeper(ID)
+);
+
+CREATE TABLE UserFanAnimal (
+  ID INTEGER PRIMARY KEY,
+  animalID INT NOT NULL,
+  userID INT NOT NULL,
+  FOREIGN KEY (animalID) REFERENCES Animal(ID),
+  FOREIGN KEY (userID) REFERENCES User(ID)
+);
+
+CREATE TABLE UserFanZoo (
+  ID INTEGER PRIMARY KEY,
+  userID INT NOT NULL,
+  zooID INT NOT NULL,
+  FOREIGN KEY (userID) REFERENCES User(ID),
+  FOREIGN KEY (zooID) REFERENCES Zoo(ID)
+);
+

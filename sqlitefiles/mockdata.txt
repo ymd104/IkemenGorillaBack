@@ -1,0 +1,54 @@
+INSERT INTO 'User' VALUES 	(1,	'kawai',	'some url',	'some text');
+INSERT INTO 'User' VALUES 	(2,	'potato',	'some url',	'some text');
+INSERT INTO 'User' VALUES 	(3,	'watermelon',	'some url',	'some text');
+
+INSERT INTO 'Zoo' VALUES 	(1,	'Kyoto Zoo',	'some url',	'some text',	'some address',	'28.428882',	'173.339181');
+INSERT INTO 'Zoo' VALUES 	(2,	'Nagoya Zoo',	'some url',	'some text',	'some address',	'28.428882',	'173.339181');
+INSERT INTO 'Zoo' VALUES 	(3,	'Chiba Zoo',	'some url',	'some text',	'some address',	'28.428882',	'173.339181');
+INSERT INTO 'Zoo' VALUES 	(4,	'Tokyo Zoo',	'some url',	'some text',	'some address',	'28.428882',	'173.339181');
+INSERT INTO 'Zoo' VALUES 	(5,	'Hiroshima Zoo',	'some url',	'some text',	'some address',	'28.428882',	'173.339181');
+INSERT INTO 'Zoo' VALUES 	(6,	'Kobe Zoo',	'some url',	'some text',	'some address',	'28.428882',	'173.339181');
+INSERT INTO 'Zoo' VALUES 	(7,	'Nara Zoo',	'some url',	'some text',	'some address',	'34.680995',	'173.339181');
+INSERT INTO 'Zoo' VALUES 	(8,	'Sapporo Zoo',	'some url',	'some text',	'some address',	'43.043962',	'173.339181');
+INSERT INTO 'Zoo' VALUES 	(9,	'Takayama Zoo',	'some url',	'some text',	'some address',	'28.428882',	'173.339181');
+
+INSERT INTO 'Animal' VALUES 	(1,	'mimi',	'jaguar',	'male',	'01/04/909',	'profile pic url',	'mimi is cute',	1);
+INSERT INTO 'Animal' VALUES 	(2,	'rex',	'tapir',	'male',	'01/04/909',	'profile pic url',	'rex is strong',	1);
+INSERT INTO 'Animal' VALUES 	(3,	'bubu',	'gorilla',	'female',	'01/04/909',	'profile pic url',	'bubu is big',	2);
+INSERT INTO 'Animal' VALUES 	(4,	'momo',	'panda',	'female',	'01/04/909',	'profile pic url',	'momo, is momo',	2);
+
+INSERT INTO 'Sponsor' VALUES 	(1,	'Toyota',	'some url',	'some website');
+INSERT INTO 'Sponsor' VALUES 	(2,	'SevenEleven',	'some url',	'some website');
+INSERT INTO 'Sponsor' VALUES 	(3,	'Huawei',	'some url',	'some website');
+INSERT INTO 'Sponsor' VALUES 	(4,	'McDonalds',	'some url',	'some website');
+INSERT INTO 'Sponsor' VALUES 	(5,	'Coca-Cola',	'some url',	'some website');
+INSERT INTO 'Sponsor' VALUES 	(6,	'Nestle',	'some url',	'some website');
+
+INSERT INTO 'Support' VALUES 	(1,	2,	3)	;
+INSERT INTO 'Support' VALUES 	(2,	2,	4)	;
+INSERT INTO 'Support' VALUES 	(3,	4,	1)	;
+INSERT INTO 'Support' VALUES 	(4,	5,	3)	;
+INSERT INTO 'Support' VALUES 	(5,	1,	1)	;
+INSERT INTO 'Support' VALUES 	(6,	1,	2)	;
+
+INSERT INTO 'Entry' VALUES 	(1,	0,	'01/04/909',	1,	1,	'best eyes');
+INSERT INTO 'Entry' VALUES 	(2,	0,	'01/04/909',	1,	2,	'best voice');
+INSERT INTO 'Entry' VALUES 	(3,	0,	'01/04/909',	1,	3,	'best hair');
+INSERT INTO 'Entry' VALUES 	(4,	0,	'01/04/909',	2,	4,	'best eyes');
+INSERT INTO 'Entry' VALUES 	(5,	0,	'01/04/909',	2,	3,	'best voice');
+INSERT INTO 'Entry' VALUES 	(6,	0,	'01/04/909',	2,	1,	'best hair');
+
+INSERT INTO 'Post' VALUES 	(1,	'mimipicture url',	'01/04/1909',	'some text',	1,	1);
+INSERT INTO 'Post' VALUES 	(2,	'rexpicture url',	'01/04/1909',	'some text',	2,	2);
+INSERT INTO 'Post' VALUES 	(3,	'bubupicture url',	'01/04/1909',	'some text',	3,	3);
+INSERT INTO 'Post' VALUES 	(4,	'momopicture url',	'01/04/1909',	'some text',	4,	1);
+INSERT INTO 'Post' VALUES 	(5,	'mimipicture url',	'01/04/1909',	'some text',	1,	2);
+INSERT INTO 'Post' VALUES 	(6,	'rexpicture url',	'01/04/1909',	'some text',	2,	2);
+INSERT INTO 'Post' VALUES 	(7,	'bubupicture url',	'01/04/1909',	'some text',	3,	1);
+INSERT INTO 'Post' VALUES 	(8,	'momopicture url',	'01/04/1909',	'some text',	4,	2);
+
+INSERT INTO 'Contest' VALUES 	(1,	'contest1',	'01/04/1909',	'01/04/2909',	'contest1',	'some url',	'some description');
+INSERT INTO 'Contest' VALUES 	(2,	'contest2',	'01/04/1909',	'01/04/3909',	'contest2',	'some url',	'some description');
+INSERT INTO 'Contest' VALUES 	(3,	'contest3',	'01/04/1909',	'01/04/1910',	'contest3',	'some url',	'some description');
+INSERT INTO 'Contest' VALUES 	(4,	'contest4',	'01/04/1909',	'01/04/1909',	'contest4',	'some url',	'some description');
+INSERT INTO 'Contest' VALUES 	(5,	'contest1',	'01/04/1909',	'01/04/2909',	'contest1',	'some url',	'some description');
